@@ -1,0 +1,14 @@
+/* Стили, разделяемые между обычной и Xinha-версией.
+v 0.3
+*/
+.table_h_tip{
+	position: absolute;
+	border: solid 1px black;
+	background-color: white;
+}
+.table_h_tip_top{
+	box-shadow: 0 -6px 8px 3px
+}
+.table_h_tip_left{
+	box-shadow: -6px -0px 8px 3px
+}

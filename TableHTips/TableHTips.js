@@ -52,10 +52,14 @@ v 0.3
 */
 
 function TableHTips(editor){
-	// автоопределение текущего каталога не удаётся сделать, так как в document.currentScript при вызове отсюда не оказывывается нужного значения
-	this.SHARED_JS_PATH 	= '/lib/table-h-tips/table-h-tips-shared.js';
-	this.SHARED_CSS_PATH	= '/lib/table-h-tips/table-h-tips-shared.css'; // подключение нежелательно вносить в SHARED_JS иначе, придётся использовать константу с путём и в обычной версии
-
+	// автоопределение текущего каталога через мою функцию не удаётся сделать, так как в document.currentScript при вызове отсюда не оказывывается нужного значения
+	// Если Xinha-версия используется в сочетании с обычнеой версией и SHARED-части в каталоге обычной версии:
+	// this.SHARED_JS_PATH 	= '/lib/table-h-tips/table-h-tips-shared.js'; // если используете
+	// this.SHARED_CSS_PATH	= '/lib/table-h-tips/table-h-tips-shared.css'; // подключение нежелательно вносить в SHARED_JS иначе, придётся использовать константу с путём и в обычной версии
+	// Если храните SHARED-части в каталоге плагина:
+	this.SHARED_JS_PATH 	= Xinha.getPluginDir('TableHTips') + '/table-h-tips-shared.js');
+	this.SHARED_CSS_PATH	= Xinha.getPluginDir('TableHTips') + 'table-h-tips-shared.css');
+	
 	this.editor = editor;
 	var cfg = editor.config;
 	var self = this;
